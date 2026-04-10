@@ -1,0 +1,112 @@
+.pricing-hero {
+  padding-bottom: 40px;
+}
+
+.pricing-card-wrapper {
+  display: flex;
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  width: 100%;
+  padding: 40px;
+  border-top: 4px solid #00F0FF;
+}
+
+.pricing-header h2 {
+  font-size: 4rem;
+  color: #fff;
+  letter-spacing: -2px;
+}
+
+.pricing-header p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.pricing-features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-size: 1.05rem;
+}
+
+.note {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.comparison-table-wrapper {
+  overflow-x: auto;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-glass);
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 20px 24px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.comparison-table th {
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: rgba(19, 26, 42, 0.4);
+}
+
+.comparison-table td {
+  color: #fff;
+}
+
+.comparison-table td strong {
+  font-weight: 600;
+}
+
+.comparison-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-item h4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}

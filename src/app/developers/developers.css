@@ -1,0 +1,101 @@
+.mx-auto { margin-left: auto; margin-right: auto; }
+.block { display: block; }
+
+.dev-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.dev-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.dev-step {
+  display: flex;
+  gap: 24px;
+}
+
+.step-number {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00F0FF;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.dev-step h4 {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.dev-codeblock {
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  background: #0B0F19;
+}
+
+.code-header {
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border-glass);
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+.code-header .file-name { color: #fff; }
+.code-header .lang { color: var(--text-secondary); }
+
+.dev-codeblock pre {
+  padding: 24px 20px;
+  overflow-x: auto;
+  margin: 0;
+}
+
+.dev-codeblock code {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.95rem;
+  color: #A6ACCD; /* Syntactic coloring mock */
+  line-height: 1.5;
+  white-space: pre;
+}
+
+.sdk-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.sdk-card {
+  padding: 32px 20px;
+}
+
+.sdk-card h4 {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .sdk-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .sdk-grid {
+    grid-template-columns: 1fr;
+  }
+}

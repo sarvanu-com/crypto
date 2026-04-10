@@ -1,0 +1,12 @@
+.security-page {
+  padding-top: 120px;
+}
+
+@media (max-width: 768px) {
+  .security-hero h1 {
+    font-size: 3rem !important;
+  }
+  .security-grid {
+    grid-template-columns: 1fr;
+  }
+}
