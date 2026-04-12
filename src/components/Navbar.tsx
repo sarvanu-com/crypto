@@ -37,9 +37,9 @@ const PRODUCT_SECTIONS = [
     label: 'Treasury Management',
     desc: 'Plug in your own liquidity providers and DeFi yield strategies.',
     items: [
-      { Icon: Globe2,    label: 'Cross-border Payments', desc: 'Orchestrate global transfers across 150+ rails.', href: '/services' },
-      { Icon: BarChart3, label: 'Merchant Payments',     desc: 'Send and receive stablecoins, convert to fiat.', href: '/services' },
-      { Icon: Zap,       label: 'Trading & Treasury',    desc: 'Multi-asset, multi-venue trading.',              href: '/services' },
+      { Icon: Globe2,    label: 'Cross-border Payments', desc: 'Orchestrate global transfers across 150+ rails.', href: '/services#cross-border' },
+      { Icon: BarChart3, label: 'Merchant Payments',     desc: 'Send and receive stablecoins, convert to fiat.', href: '/services#merchant' },
+      { Icon: Zap,       label: 'Trading & Treasury',    desc: 'Multi-asset, multi-venue trading.',              href: '/services#trading' },
     ],
     feature: {
       tag: "SEE WHAT'S NEW",

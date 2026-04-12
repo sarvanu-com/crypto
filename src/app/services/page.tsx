@@ -1,12 +1,41 @@
 import type { Metadata } from 'next';
 import CTA from '@/components/CTA';
-import { Layers, Zap, Wallet, BarChart3, Globe, DollarSign, CheckCircle2, Database, RefreshCw } from 'lucide-react';
+import PaymentGlobe from '@/components/PaymentGlobe';
+import { 
+  Link as LinkIcon, 
+  SquareDashed, 
+  Sliders, 
+  Zap, 
+  Wallet, 
+  BarChart3, 
+  Globe, 
+  DollarSign, 
+  CheckCircle2, 
+  Database, 
+  RefreshCw,
+  ArrowRight,
+  Lightbulb,
+  ShieldCheck,
+  Building2,
+  LayoutDashboard,
+  Coins,
+  LineChart,
+  ShoppingBag,
+  CreditCard,
+  Settings,
+  ShieldHalf,
+  ChevronRight,
+  Network,
+  Maximize2,
+  Link2,
+  ArrowRightLeft
+} from 'lucide-react';
+import './services.css';
 
 export const metadata: Metadata = {
   title: 'What We Provide | Texnova Services',
-  description: 'Explore Texnova\'s core technical pillars: Global Payment Rails, Embedded Wallets, and Programmable Treasury with our transparent 0.1% fee model.',
+  description: 'Explore Texnova\'s premium infrastructure: Cross-border Payments, Merchant Payments, and Trading & Treasury.',
 };
-import './services.css';
 
 export default function Services() {
   return (
@@ -14,143 +43,339 @@ export default function Services() {
       {/* Hero Section */}
       <section className="services-hero text-center container">
         <div className="mx-auto mb-6 flex justify-center">
-          <div className="services-badge">Everything you need</div>
+          <div className="services-badge">Infrastructure for the future</div>
         </div>
-        <h1 className="hero-title" style={{ fontSize: '4.5rem', marginBottom: '24px' }}>What We Provide.</h1>
-        <p className="text-secondary mx-auto" style={{ fontSize: '1.25rem', maxWidth: '750px', marginBottom: '80px' }}>
-          One unified API integration connects your enterprise platform directly to the entire decentralized financial backbone. We provide the infrastructure; you build the future.
+        <h1 className="hero-title">What We Provide.</h1>
+        <p className="hero-subtitle mx-auto">
+          One unified API integration connects your enterprise platform directly to the entire decentralized financial backbone.
         </p>
       </section>
 
-      {/* Services Breakdown */}
-      <section className="container mb-24 services-list">
-        <h2 className="text-3xl text-center text-white mb-12 font-bold tracking-widest uppercase">Our Core Technical Pillars</h2>
-        
-        <div className="service-card glass-panel flex mb-8">
-          <div className="service-icon-wrap" style={{ background: 'rgba(0, 240, 255, 0.05)' }}>
-            <Zap size={48} style={{ color: 'var(--glow-cyan)' }} />
-          </div>
-          <div className="service-content">
-            <h3 className="text-3xl text-white mb-4">Global Payment Rails</h3>
-            <p className="text-secondary text-lg mb-6">
-              Instantly route capital globally bypassing traditional correspondent banking networks. We provide cross-border settlement rails allowing you to liquidate stablecoins directly to fiat across 120+ local jurisdictions.
-            </p>
-            <ul className="text-secondary flex flex-col gap-3">
-              <li className="flex items-center gap-3"><CheckCircle2 size={20} style={{ color: 'var(--glow-cyan)' }} /> Real-time T+0 settlement</li>
-              <li className="flex items-center gap-3"><CheckCircle2 size={20} style={{ color: 'var(--glow-cyan)' }} /> Complete liquidity bridging</li>
-              <li className="flex items-center gap-3"><CheckCircle2 size={20} style={{ color: 'var(--glow-cyan)' }} /> Redundant network routing</li>
+      {/* 1. Cross-border Payments Section (Image 2 style) */}
+      <section id="cross-border" className="feature-section premium-feature">
+        <div className="container feature-container">
+          <div className="feature-content">
+            <div className="feature-eyebrow">
+              <span className="eyebrow-dot"></span>
+              CROSS-BORDER PAYMENTS
+            </div>
+            <h2 className="feature-headline">
+              Take full control over your payment stack.
+            </h2>
+            
+            <ul className="premium-list">
+              <li>
+                <div className="list-node">
+                  <LinkIcon size={20} className="node-icon" />
+                  <div className="node-line"></div>
+                </div>
+                <div className="list-text">
+                  <h3>Connect your chosen liquidity and trading partners.</h3>
+                </div>
+              </li>
+              <li>
+                <div className="list-node">
+                  <SquareDashed size={20} className="node-icon" />
+                  <div className="node-line"></div>
+                </div>
+                <div className="list-text">
+                  <h3>Configure your own risk appetite and thresholds.</h3>
+                </div>
+              </li>
+              <li>
+                <div className="list-node">
+                  <Sliders size={20} className="node-icon" />
+                </div>
+                <div className="list-text">
+                  <h3>Operate under your own licensing and retain full control over custody.</h3>
+                </div>
+              </li>
             </ul>
-          </div>
-        </div>
 
-        <div className="service-card glass-panel flex mb-8">
-          <div className="service-icon-wrap" style={{ background: 'rgba(138, 43, 226, 0.05)' }}>
-            <Wallet size={48} style={{ color: 'var(--glow-purple)' }} />
+            <div className="feature-actions">
+              <button className="btn btn-primary">
+                Learn more <ArrowRight size={16} style={{ marginLeft: '8px' }} />
+              </button>
+            </div>
           </div>
-          <div className="service-content">
-            <h3 className="text-3xl text-white mb-4">Embedded Wallets & Finance</h3>
-            <p className="text-secondary text-lg mb-6">
-              We provide the programmatic generation of non-custodial and custodial wallets. Give your users a fully white-labeled Web3 experience protected by military-grade MPC architecture and gas abstraction tools.
-            </p>
-            <ul className="text-secondary flex flex-col gap-3">
-              <li className="flex items-center gap-3"><CheckCircle2 size={20} style={{ color: 'var(--glow-purple)' }} /> User-friendly Gas Abstraction</li>
-              <li className="flex items-center gap-3"><CheckCircle2 size={20} style={{ color: 'var(--glow-purple)' }} /> SDKs for 5+ languages</li>
-              <li className="flex items-center gap-3"><CheckCircle2 size={20} style={{ color: 'var(--glow-purple)' }} /> Multi-Party Computation secure keys</li>
-            </ul>
-          </div>
-        </div>
 
-        <div className="service-card glass-panel flex mb-8">
-          <div className="service-icon-wrap" style={{ background: 'linear-gradient(135deg, rgba(0, 240, 255, 0.05), rgba(138, 43, 226, 0.05))' }}>
-            <Layers size={48} className="text-white" />
-          </div>
-          <div className="service-content">
-            <h3 className="text-3xl text-white mb-4">Programmable Treasury</h3>
-            <p className="text-secondary text-lg mb-6">
-              We provide automated yield generation on your idle reserve capital. Our engine securely routes corporate treasury assets into risk-assessed, institutional-grade decentralized protocols.
-            </p>
-            <ul className="text-secondary flex flex-col gap-3">
-              <li className="flex items-center gap-3"><CheckCircle2 size={20} className="text-white" /> Automated algorithmic yield</li>
-              <li className="flex items-center gap-3"><CheckCircle2 size={20} className="text-white" /> Real-time portfolio monitoring</li>
-              <li className="flex items-center gap-3"><CheckCircle2 size={20} className="text-white" /> Strict risk-management safeguards</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="service-card glass-panel flex mb-8">
-          <div className="service-icon-wrap" style={{ background: 'rgba(0, 240, 255, 0.05)' }}>
-            <Database size={48} style={{ color: 'var(--glow-cyan)' }} />
-          </div>
-          <div className="service-content">
-            <h3 className="text-3xl text-white mb-4">Asset Tokenization Engine</h3>
-            <p className="text-secondary text-lg mb-6">
-              Launch regulatory-compliant Real-World Asset (RWA) tokens seamlessly. Our infrastructure handles the smart contract deployment, lifecycle management, and cap-table syncing directly to public networks.
-            </p>
-            <ul className="text-secondary flex flex-col gap-3">
-              <li className="flex items-center gap-3"><CheckCircle2 size={20} style={{ color: 'var(--glow-cyan)' }} /> RWA & Security Token lifecycle</li>
-              <li className="flex items-center gap-3"><CheckCircle2 size={20} style={{ color: 'var(--glow-cyan)' }} /> Automated cap-table management</li>
-              <li className="flex items-center gap-3"><CheckCircle2 size={20} style={{ color: 'var(--glow-cyan)' }} /> SEC/MiCA compliance rulesets</li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="service-card glass-panel flex mb-8">
-          <div className="service-icon-wrap" style={{ background: 'rgba(138, 43, 226, 0.05)' }}>
-            <RefreshCw size={48} style={{ color: 'var(--glow-purple)' }} />
-          </div>
-          <div className="service-content">
-            <h3 className="text-3xl text-white mb-4">Global Fiat Ramps</h3>
-            <p className="text-secondary text-lg mb-6">
-              Accept fiat deposits and handle payouts in 50+ local currencies. We abstract away the regulatory burden so you can convert physical capital directly into on-chain balances with maximum efficiency.
-            </p>
-            <ul className="text-secondary flex flex-col gap-3">
-              <li className="flex items-center gap-3"><CheckCircle2 size={20} style={{ color: 'var(--glow-purple)' }} /> 50+ Local currencies supported</li>
-              <li className="flex items-center gap-3"><CheckCircle2 size={20} style={{ color: 'var(--glow-purple)' }} /> API-driven deposit endpoints</li>
-              <li className="flex items-center gap-3"><CheckCircle2 size={20} style={{ color: 'var(--glow-purple)' }} /> Best-execution FX routes</li>
-            </ul>
+          <div className="feature-visual">
+            <div className="globe-wrapper">
+              <PaymentGlobe size={550} />
+              <div className="globe-overlay-glow"></div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Business Model Section */}
+      {/* 2. Merchant Payments Section (Updated style) */}
+      <section id="merchant" className="feature-section merchant-overhaul">
+        <div className="container feature-container reverse">
+          <div className="feature-content">
+            <div className="feature-eyebrow">
+              <span className="eyebrow-dot" style={{ backgroundColor: 'var(--primary-blue)' }}></span>
+              MERCHANT PAYMENTS
+            </div>
+            <h2 className="feature-headline">
+              Accelerate your go-to market.
+            </h2>
+            
+            <ul className="merchant-feature-list">
+              <li>
+                <div className="m-feat-icon">
+                  <Lightbulb size={24} />
+                </div>
+                <div className="m-feat-text">
+                  <h3>Out of the box</h3>
+                  <p>Stablecoin pay-in and payout management, error handling, gas optimization and auto-conversions.</p>
+                </div>
+              </li>
+              <li>
+                <div className="m-feat-icon">
+                  <ShieldCheck size={24} />
+                </div>
+                <div className="m-feat-text">
+                  <h3>Compliance-ready</h3>
+                  <p>AML, OFAC, and more. Compliance built in from day one.</p>
+                </div>
+              </li>
+              <li>
+                <div className="m-feat-icon">
+                  <Building2 size={24} />
+                </div>
+                <div className="m-feat-text">
+                  <h3>Enterprise-grade security</h3>
+                  <p>Built to match the highest security standards in finance.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div className="feature-visual">
+            {/* Animated Dashboard Mockup */}
+            <div className="merchant-dashboard-wrapper">
+              <div className="dashboard-mockup">
+                <div className="dashboard-scanner"></div>
+                <div className="dashboard-sidebar">
+                  <div className="sidebar-logo">TEXNOVA</div>
+                  <nav className="sidebar-nav">
+                    <div className="nav-item"><LayoutDashboard size={14} /> Dashboard</div>
+                    <div className="nav-item"><Coins size={14} /> Digital Assets <ChevronRight size={10} /></div>
+                    <div className="nav-item"><LineChart size={14} /> Trading <ChevronRight size={10} /></div>
+                    <div className="nav-item active"><ShoppingBag size={14} /> Merchant Payments <ChevronRight size={10} /></div>
+                    <div className="nav-sub-item active">Accounts</div>
+                    <div className="nav-sub-item">Fee Policies</div>
+                    <div className="nav-sub-item">Linked policies</div>
+                    <div className="nav-item"><CreditCard size={14} /> Integrations <ChevronRight size={10} /></div>
+                    <div className="nav-item"><Settings size={14} /> Settings <ChevronRight size={10} /></div>
+                    <div className="nav-item"><ShieldHalf size={14} /> Service <ChevronRight size={10} /></div>
+                  </nav>
+                </div>
+                <div className="dashboard-main">
+                  <div className="dashboard-header">
+                    <h3>Merchant Accounts</h3>
+                    <p>Add a merchant account to your tenant</p>
+                  </div>
+                  <div className="accounts-table">
+                    <div className="table-header">
+                      <span>ID</span>
+                      <span>USD</span>
+                      <span>FROM</span>
+                    </div>
+                    <div className="table-row pulse-row row-1">
+                      <span className="account-id">d66f7783...8603c5ed</span>
+                      <span className="account-val">56.08</span>
+                      <span className="account-from">USD 58.083663</span>
+                    </div>
+                    <div className="table-row row-2">
+                      <span className="account-id">be71aa13...6d82b08c</span>
+                      <span className="account-val">52.40</span>
+                      <span className="account-from">GBP 42.992793</span>
+                    </div>
+                    <div className="table-row pulse-row row-3">
+                      <span className="account-id">c7453548...3cf64e8f</span>
+                      <span className="account-val">59.11</span>
+                      <span className="account-from">ETH 0.018242</span>
+                    </div>
+                    <div className="table-row row-4">
+                      <span className="account-id">378f6aef...7c762228</span>
+                      <span className="account-val">50.84</span>
+                      <span className="account-from">EUR 49.566509</span>
+                    </div>
+                    <div className="table-row pulse-row row-5">
+                      <span className="account-id">37329786...23155637</span>
+                      <span className="account-val">60.94</span>
+                      <span className="account-from">GBP 50.001699</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="dashboard-accent-blob"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Trading & Treasury Section (Image 4 style) */}
+      <section id="trading" className="feature-section trading-overhaul alt-bg">
+        <div className="container feature-container">
+          <div className="feature-content">
+            <div className="feature-eyebrow">
+              <span className="eyebrow-dot" style={{ backgroundColor: 'var(--primary-blue)' }}></span>
+              TRADING & TREASURY
+            </div>
+            <h2 className="feature-headline">
+              Orchestrate payments across fiat and crypto globally.
+            </h2>
+            
+            <ul className="merchant-feature-list">
+              <li>
+                <div className="m-feat-icon">
+                  <Network size={24} />
+                </div>
+                <div className="m-feat-text">
+                  <h3>Route, convert, and settle payments</h3>
+                  <p>Across fiat and crypto, globally.</p>
+                </div>
+              </li>
+              <li>
+                <div className="m-feat-icon">
+                  <Maximize2 size={24} />
+                </div>
+                <div className="m-feat-text">
+                  <h3>Access to liquidity</h3>
+                  <p>And payment rails for fiat to stablecoin to fiat payouts to emerging markets.</p>
+                </div>
+              </li>
+              <li>
+                <div className="m-feat-icon">
+                  <Link2 size={24} />
+                </div>
+                <div className="m-feat-text">
+                  <h3>Plug in your providers</h3>
+                  <p>And execute your multi-venue, multi-leg trade strategies for synthetic pairs.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div className="feature-visual">
+            <div className="orchestration-dashboard-wrapper">
+              <div className="orchestration-dashboard glass-panel">
+                <div className="orch-conversion-header">
+                  <div className="conv-card">
+                    <div className="conv-flag">🇪🇺</div>
+                    <div className="conv-info">
+                      <span className="conv-amt">10,000 EUR</span>
+                      <span className="conv-label">BVNK Eur Wallet</span>
+                    </div>
+                  </div>
+                  <div className="conv-arrow">
+                    <ArrowRightLeft size={16} />
+                    <span className="conv-status-tag">In progress</span>
+                  </div>
+                  <div className="conv-card">
+                    <div className="conv-flag">🇲🇽</div>
+                    <div className="conv-info">
+                      <span className="conv-amt text-primary">215,684.00 MXN</span>
+                      <span className="conv-label">Saul Carter</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="orch-progress-bar">
+                  <div className="progress-fill">
+                    <div className="progress-glow"></div>
+                  </div>
+                </div>
+
+                <div className="orch-meta-grid">
+                  <div className="meta-item">
+                    <span className="meta-label">Reference</span>
+                    <span className="meta-val">REF123415</span>
+                  </div>
+                  <div className="meta-item">
+                    <span className="meta-label">Total fees</span>
+                    <span className="meta-val">~ 1.10 EUR</span>
+                  </div>
+                  <div className="meta-item">
+                    <span className="meta-label">Estimated time</span>
+                    <span className="meta-val">~ 15 min</span>
+                  </div>
+                </div>
+
+                <div className="orch-activity">
+                  <div className="activity-title">Payment activity</div>
+                  <div className="activity-list">
+                    <div className="activity-row">
+                      <div className="act-status green"><span className="dot"></span> Success</div>
+                      <div className="act-details">
+                         <div className="act-pair">
+                            <span className="token">EUR</span>
+                            <ArrowRight size={12} />
+                            <span className="token">USDT</span>
+                         </div>
+                         <div className="act-meta">Fee .005 EUR | 10,000 EUR | 0:04</div>
+                      </div>
+                    </div>
+                    <div className="activity-row">
+                      <div className="act-status blue"><span className="dot"></span> Pending</div>
+                      <div className="act-details">
+                         <div className="act-pair">
+                            <span className="token">USDT</span>
+                            <ArrowRight size={12} />
+                            <span className="token">USDT</span>
+                         </div>
+                         <div className="act-meta">Fee .005 EUR | 11,000 USDT | 0:12</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Business Model Section (Keep as requested, maybe polish) */}
       <section className="container mb-24 business-model-section relative">
         <div className="model-glow"></div>
-        <div className="glass-panel relative z-10" style={{ padding: '80px 40px', borderColor: 'var(--glow-purple)' }}>
+        <div className="glass-panel relative z-10" style={{ padding: '80px 40px', background: '#ffffff', borderColor: 'rgba(0, 71, 255, 0.1)' }}>
           <div className="text-center mb-16">
-            <h2 className="text-4xl text-white mb-6 font-bold" style={{ textShadow: '0 0 20px rgba(138,43,226,0.3)' }}>Our Business Model</h2>
+            <h2 className="text-4xl text-primary mb-6 font-bold">Our Business Model</h2>
             <p className="text-secondary text-xl mx-auto" style={{ maxWidth: '800px' }}>
-              We believe infrastructure should be radically transparent. We make money purely on execution volume and enterprise software subscriptions, completely decoupled from asset custody.
+              Infrastructure should be radically transparent. We make money purely on execution volume, completely decoupled from asset custody.
             </p>
           </div>
           
           <div className="grid grid-cols-3 gap-8 model-grid">
-            <div className="glass-panel text-center p-8 model-card" style={{ background: 'rgba(0,0,0,0.4)', padding: '40px' }}>
-              <div className="model-icon mx-auto mb-6" style={{ background: 'rgba(0, 240, 255, 0.1)', width: '80px', height: '80px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <DollarSign size={40} style={{ color: 'var(--glow-cyan)' }} />
+            <div className="glass-panel text-center p-8 model-card" style={{ background: '#F8FAFC', padding: '40px' }}>
+              <div className="model-icon mx-auto mb-6" style={{ background: 'rgba(0, 71, 255, 0.08)', width: '80px', height: '80px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <DollarSign size={40} style={{ color: 'var(--primary-blue)' }} />
               </div>
-              <h4 className="text-2xl text-white mb-4">Flat 0.1% Processing</h4>
+              <h4 className="text-2xl text-primary mb-4">Flat 0.1% Processing</h4>
               <p className="text-secondary">
-                We charge a strictly flat 0.1% base processing fee on every network transaction. Absolutely zero hidden spread margins, FX padding, or surprise volume thresholds.
+                Strictly flat processing fee on every transaction. Zero hidden spread margins or surprise thresholds.
               </p>
             </div>
             
-            <div className="glass-panel text-center p-8 model-card" style={{ background: 'rgba(0,0,0,0.4)', padding: '40px' }}>
-              <div className="model-icon mx-auto mb-6" style={{ background: 'rgba(138, 43, 226, 0.1)', width: '80px', height: '80px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <BarChart3 size={40} style={{ color: 'var(--glow-purple)' }} />
+            <div className="glass-panel text-center p-8 model-card" style={{ background: '#F8FAFC', padding: '40px' }}>
+              <div className="model-icon mx-auto mb-6" style={{ background: 'rgba(0, 71, 255, 0.08)', width: '80px', height: '80px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <BarChart3 size={40} style={{ color: 'var(--primary-blue)' }} />
               </div>
-              <h4 className="text-2xl text-white mb-4">Enterprise SaaS Tiers</h4>
+              <h4 className="text-2xl text-primary mb-4">Enterprise SaaS Tiers</h4>
               <p className="text-secondary">
-                For major institutions, we offer dedicated hosting environments and scalable API subscriptions starting at $3.5k/mo, which drastically drops the transactional limits.
+                Dedicated hosting and scalable API subscriptions for major institutions starting at $3.5k/mo.
               </p>
             </div>
             
-            <div className="glass-panel text-center p-8 model-card" style={{ background: 'rgba(0,0,0,0.4)', padding: '40px' }}>
-              <div className="model-icon mx-auto mb-6" style={{ background: 'rgba(0, 240, 255, 0.1)', width: '80px', height: '80px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Globe size={40} style={{ color: 'var(--glow-cyan)' }} />
+            <div className="glass-panel text-center p-8 model-card" style={{ background: '#F8FAFC', padding: '40px' }}>
+              <div className="model-icon mx-auto mb-6" style={{ background: 'rgba(0, 71, 255, 0.08)', width: '80px', height: '80px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Globe size={40} style={{ color: 'var(--primary-blue)' }} />
               </div>
-              <h4 className="text-2xl text-white mb-4">Zero Custody Fees</h4>
+              <h4 className="text-2xl text-primary mb-4">Zero Custody Fees</h4>
               <p className="text-secondary">
-                Holding 1 million or 1 billion on our platform costs you identically: $0. We never charge custody, deposit, or ongoing "assets under management" taxes on your capital.
+                Holding 1 million or 1 billion on our platform costs you identically: $0. We never charge custody taxes.
               </p>
             </div>
           </div>

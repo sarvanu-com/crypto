@@ -97,7 +97,7 @@
 .ew-card {
   background: #ffffff;
   border-radius: 24px;
-  border: 1.5px solid rgba(0, 0, 0, 0.07);
+  border: 1.5px solid rgba(0, 71, 255, 0.25); /* Permanent blue accent */
   padding: 28px 26px 24px;
   box-shadow: 0 6px 28px rgba(0, 0, 0, 0.07);
   transition:
@@ -110,34 +110,23 @@
 
 .ew-card:hover {
   transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 16px 48px rgba(0, 71, 255, 0.13);
-  border-color: rgba(0, 71, 255, 0.28);
+  box-shadow: 0 16px 48px rgba(0, 71, 255, 0.2);
 }
 
-/* Subtle shimmer sweep on hover */
-.ew-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg,
-      transparent 20%,
-      rgba(255, 255, 255, 0.55) 50%,
-      transparent 80%);
-  transform: translateX(-100%);
-  transition: transform 0.55s ease;
-  pointer-events: none;
-  border-radius: inherit;
-}
-
-.ew-card:hover::before {
-  transform: translateX(100%);
-}
+/* Removed shimmer sweep on hover */
 
 /* ════════════════════════════════
    CARD 1 — WALLETS
 ════════════════════════════════ */
 .ew-card-wallets {
-  background: linear-gradient(145deg, #f8faff 0%, #ffffff 100%);
+  background: #000c24 !important;
+  background: linear-gradient(145deg, #000c24 0%, #001a4d 100%) !important;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.ew-card-wallets:hover {
+  background: #000c24 !important;
 }
 
 /* Header row */
@@ -190,12 +179,12 @@
 .ew-card-title {
   font-size: 1rem;
   font-weight: 700;
-  color: #0b132b;
+  color: #ffffff;
 }
 
 .ew-card-desc {
   font-size: 0.82rem;
-  color: #64748b;
+  color: #94a3b8;
   line-height: 1.65;
   margin-bottom: 22px;
 }
@@ -276,7 +265,7 @@
 .ew-token-lbl {
   font-size: 0.68rem;
   font-weight: 600;
-  color: #475569;
+  color: #94a3b8;
 }
 
 /* Pills at bottom of wallets card */
@@ -300,10 +289,17 @@
    CARD 2 — PAYMENT
 ════════════════════════════════ */
 .ew-card-payment {
-  background: #fff;
+  background: #000c24 !important;
+  background: linear-gradient(145deg, #000a1d 0%, #001235 100%) !important;
   display: flex;
   flex-direction: column;
   gap: 0;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.ew-card-payment:hover {
+  background: #000c24 !important;
 }
 
 /* Live status dot */
@@ -345,14 +341,14 @@
 
 .ew-total-text {
   font-size: 0.82rem;
-  color: #64748b;
+  color: #94a3b8;
   font-weight: 500;
 }
 
 .ew-total-amt {
   font-size: 1.6rem;
   font-weight: 800;
-  color: #0b132b;
+  color: #ffffff;
   letter-spacing: -0.02em;
 }
 
@@ -375,7 +371,7 @@
   flex: 1;
   font-size: 0.82rem;
   font-weight: 500;
-  color: #0b132b;
+  color: #e2e8f0;
 }
 
 /* Radio */
@@ -399,8 +395,8 @@
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.05em;
-  color: #0b132b;
-  background: #eef2ff;
+  color: #ffffff;
+  background: rgba(59, 130, 246, 0.2);
   padding: 3px 9px;
   border-radius: 6px;
 }
@@ -458,7 +454,7 @@
 /* Separator */
 .ew-sep {
   height: 1px;
-  background: #f1f5f9;
+  background: rgba(255, 255, 255, 0.1);
   margin: 6px 0;
 }
 
@@ -650,7 +646,7 @@
   background: #ffffff;
   border-radius: 24px;
   padding: 32px;
-  box-shadow: 0 12px 48px rgba(0,0,0,0.06);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.06);
 }
 
 .ew-fg {
@@ -666,7 +662,8 @@
   color: #64748b;
 }
 
-.ew-fg input, .ew-fg select {
+.ew-fg input,
+.ew-fg select {
   width: 100%;
   padding: 14px 16px;
   border: 1px solid #e2e8f0;
@@ -679,7 +676,8 @@
   font-family: inherit;
 }
 
-.ew-fg input:focus, .ew-fg select:focus {
+.ew-fg input:focus,
+.ew-fg select:focus {
   border-color: #2563eb;
 }
 
@@ -817,7 +815,7 @@
   width: 100%;
   padding: 12px;
   background: rgba(37, 99, 235, 0.15);
-  color: #2563eb; 
+  color: #2563eb;
   font-weight: 600;
   font-size: 0.95rem;
   border-radius: 8px;
@@ -862,7 +860,7 @@
   font-weight: 600;
   text-align: center;
   padding: 38px 16px 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .ew-phone-body {
@@ -881,7 +879,7 @@
   height: 180px;
   border-radius: 20px;
   margin-bottom: 30px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -924,9 +922,17 @@
 }
 
 @keyframes scanLoop {
-  0% { transform: translateY(-5px); }
-  50% { transform: translateY(145px); }
-  100% { transform: translateY(-5px); }
+  0% {
+    transform: translateY(-5px);
+  }
+
+  50% {
+    transform: translateY(145px);
+  }
+
+  100% {
+    transform: translateY(-5px);
+  }
 }
 
 /* Success State Animation */
@@ -980,20 +986,58 @@
 5.5s-6s: Transition back
 */
 @keyframes qrSequence {
-  0%, 55% { opacity: 1; transform: scale(1); }
-  60%, 92% { opacity: 0; transform: scale(0.9); }
-  98%, 100% { opacity: 1; transform: scale(1); }
+
+  0%,
+  55% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  60%,
+  92% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  98%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes successSequence {
-  0%, 55% { opacity: 0; transform: scale(0.9); }
-  62%, 92% { opacity: 1; transform: scale(1); }
-  98%, 100% { opacity: 0; transform: scale(0.9); }
+
+  0%,
+  55% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  62%,
+  92% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  98%,
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
 }
 
 @keyframes checkDraw {
-  0%, 60% { stroke-dashoffset: 40; }
-  66%, 100% { stroke-dashoffset: 0; }
+
+  0%,
+  60% {
+    stroke-dashoffset: 40;
+  }
+
+  66%,
+  100% {
+    stroke-dashoffset: 0;
+  }
 }
 
 /* Interactive Pay Button Anim */
@@ -1013,7 +1057,8 @@
   animation: btnBgChange 6s infinite;
 }
 
-.ew-btn-text-pay, .ew-btn-text-done {
+.ew-btn-text-pay,
+.ew-btn-text-done {
   position: absolute;
   color: #fff;
   transition: opacity 0.3s, transform 0.3s;
@@ -1022,26 +1067,69 @@
 .ew-btn-text-pay {
   animation: textPayAnim 6s infinite;
 }
+
 .ew-btn-text-done {
   animation: textDoneAnim 6s infinite;
 }
 
 @keyframes btnBgChange {
-  0%, 55% { background: #0f3f98; }
-  62%, 92% { background: #22c55e; }
-  98%, 100% { background: #0f3f98; }
+
+  0%,
+  55% {
+    background: #0f3f98;
+  }
+
+  62%,
+  92% {
+    background: #22c55e;
+  }
+
+  98%,
+  100% {
+    background: #0f3f98;
+  }
 }
 
 @keyframes textPayAnim {
-  0%, 55% { opacity: 1; transform: translateY(0); }
-  60%, 95% { opacity: 0; transform: translateY(-20px); }
-  98%, 100% { opacity: 1; transform: translateY(0); }
+
+  0%,
+  55% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  60%,
+  95% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  98%,
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes textDoneAnim {
-  0%, 55% { opacity: 0; transform: translateY(20px); }
-  62%, 92% { opacity: 1; transform: translateY(0); }
-  98%, 100% { opacity: 0; transform: translateY(20px); }
+
+  0%,
+  55% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  62%,
+  92% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  98%,
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 }
 
 /* ════════════════════════════════
@@ -1059,7 +1147,8 @@
   background: #ffffff;
   border-radius: 24px;
   padding: 32px;
-  box-shadow: 0 16px 48px rgba(15, 63, 152, 0.08); /* solid normal blueish shadow */
+  box-shadow: 0 16px 48px rgba(15, 63, 152, 0.08);
+  /* solid normal blueish shadow */
   border: 1px solid rgba(15, 63, 152, 0.05);
 }
 
@@ -1095,12 +1184,13 @@
   background: #ffffff;
   border-radius: 12px;
   padding: 10px 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
   cursor: pointer;
   transition: box-shadow 0.2s;
 }
+
 .ew-cf-select:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .ew-cf-token {
@@ -1124,12 +1214,30 @@
   font-weight: 700;
   flex-shrink: 0;
 }
-.ew-icon-eur { background: #0b3075; }
-.ew-icon-gbp { background: #9333ea; }
-.ew-icon-usd { background: #16a34a; }
-.ew-icon-usdc { background: #0047ff; }
-.ew-icon-btc { background: #f7931a; }
-.ew-icon-eth { background: #627eea; }
+
+.ew-icon-eur {
+  background: #0b3075;
+}
+
+.ew-icon-gbp {
+  background: #9333ea;
+}
+
+.ew-icon-usd {
+  background: #16a34a;
+}
+
+.ew-icon-usdc {
+  background: #0047ff;
+}
+
+.ew-icon-btc {
+  background: #f7931a;
+}
+
+.ew-icon-eth {
+  background: #627eea;
+}
 
 /* Custom Sliders */
 .ew-slider-mask {
@@ -1140,11 +1248,13 @@
   position: relative;
   display: block;
 }
+
 .ew-currency-slider {
   display: flex;
   flex-direction: column;
   animation: slidePairs 9s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
 }
+
 .ew-currency-slide {
   height: 32px;
   min-height: 32px;
@@ -1155,10 +1265,25 @@
 }
 
 @keyframes slidePairs {
-  0%, 25%   { transform: translateY(0); }
-  33%, 58%  { transform: translateY(-32px); }
-  66%, 91%  { transform: translateY(-64px); }
-  100%      { transform: translateY(-96px); }
+
+  0%,
+  25% {
+    transform: translateY(0);
+  }
+
+  33%,
+  58% {
+    transform: translateY(-32px);
+  }
+
+  66%,
+  91% {
+    transform: translateY(-64px);
+  }
+
+  100% {
+    transform: translateY(-96px);
+  }
 }
 
 .ew-convert-swap {
@@ -1179,20 +1304,36 @@
   align-items: center;
   justify-content: center;
   color: #0047ff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
   cursor: pointer;
   animation: swapSpinMult 9s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
   transition: background 0.2s;
 }
+
 .ew-swap-btn:hover {
   background: #ffffff;
 }
 
 @keyframes swapSpinMult {
-  0%, 25%   { transform: rotate(0deg); }
-  33%, 58%  { transform: rotate(180deg); }
-  66%, 91%  { transform: rotate(360deg); }
-  100%      { transform: rotate(540deg); }
+
+  0%,
+  25% {
+    transform: rotate(0deg);
+  }
+
+  33%,
+  58% {
+    transform: rotate(180deg);
+  }
+
+  66%,
+  91% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(540deg);
+  }
 }
 
 .ew-cf-to {
@@ -1225,6 +1366,7 @@
   flex-direction: column;
   animation: slideVals9s 9s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
 }
+
 .ew-ca-value {
   font-size: 1.15rem;
   font-weight: 800;
@@ -1235,10 +1377,25 @@
 }
 
 @keyframes slideVals9s {
-  0%, 25%   { transform: translateY(0); }
-  33%, 58%  { transform: translateY(-32px); }
-  66%, 91%  { transform: translateY(-64px); }
-  100%      { transform: translateY(-96px); }
+
+  0%,
+  25% {
+    transform: translateY(0);
+  }
+
+  33%,
+  58% {
+    transform: translateY(-32px);
+  }
+
+  66%,
+  91% {
+    transform: translateY(-64px);
+  }
+
+  100% {
+    transform: translateY(-96px);
+  }
 }
 
 .ew-slider-mask-badge {
@@ -1249,6 +1406,7 @@
   position: relative;
   display: block;
 }
+
 .ew-badge-slider {
   display: flex;
   flex-direction: column;
@@ -1271,7 +1429,7 @@
   font-weight: 800;
   color: #0b132b;
   font-size: 0.8rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
 }
 
 .ew-ca-badge .ew-token-icon {
@@ -1328,6 +1486,7 @@
     transform: scale(0.9);
   }
 }
+
 @media (max-width: 768px) {
   .ew-store-wrapper {
     transform: scale(0.85);
@@ -1339,7 +1498,8 @@
   width: 100%;
   background: #0f3f98;
   border-radius: 24px;
-  box-shadow: 0 16px 48px rgba(15, 63, 152, 0.2); /* elegant shadow */
+  box-shadow: 0 16px 48px rgba(15, 63, 152, 0.2);
+  /* elegant shadow */
   border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
   position: relative;
@@ -1393,10 +1553,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem; /* emoji size */
+  font-size: 1.2rem;
+  /* emoji size */
   background: #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
+
 .ew-sa-icon.ew-icon-usdc {
   background: #0047ff;
   color: white;
@@ -1559,45 +1721,138 @@
 /* ═════ 16-SECOND TIMELINE (4 PHASES) ═════ */
 
 @keyframes floatInLeft {
-  0%, 4%   { transform: translateX(-40px); opacity: 0; }
-  8%, 18%  { transform: translateX(0); opacity: 1; }
-  22%, 100% { transform: translateX(40px); opacity: 0; }
+
+  0%,
+  4% {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+
+  8%,
+  18% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  22%,
+  100% {
+    transform: translateX(40px);
+    opacity: 0;
+  }
 }
 
 @keyframes floatInRight {
-  0%, 4%   { transform: translateX(-40px); opacity: 0; }
-  8%, 18%  { transform: translateX(0); opacity: 1; }
-  22%, 100% { transform: translateX(40px); opacity: 0; }
+
+  0%,
+  4% {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+
+  8%,
+  18% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  22%,
+  100% {
+    transform: translateX(40px);
+    opacity: 0;
+  }
 }
 
 @keyframes swapPulseAll {
-  0%, 8%   { transform: scale(0.8); opacity: 0; }
-  10%, 12% { transform: scale(1.1); opacity: 1; }
-  14%, 20% { transform: scale(1); opacity: 1; }
-  24%, 100% { transform: scale(0.8); opacity: 0; }
+
+  0%,
+  8% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  10%,
+  12% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  14%,
+  20% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  24%,
+  100% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
 }
 
 @keyframes balUpdateAll {
-  0%, 12%  { transform: translateY(0); }
-  16%, 98% { transform: translateY(-20px); }
-  100%     { transform: translateY(0); }
+
+  0%,
+  12% {
+    transform: translateY(0);
+  }
+
+  16%,
+  98% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
-.ew-bubble-1 { animation: floatInLeft   16s cubic-bezier(0.4, 0, 0.2, 1) 0s infinite backwards; }
-.ew-conn-1   { animation: swapPulseAll  16s 0s infinite backwards; }
-.ew-bal-1    { animation: balUpdateAll  16s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0s infinite backwards; }
+.ew-bubble-1 {
+  animation: floatInLeft 16s cubic-bezier(0.4, 0, 0.2, 1) 0s infinite backwards;
+}
 
-.ew-bubble-2 { animation: floatInRight  16s cubic-bezier(0.4, 0, 0.2, 1) -12s infinite backwards; }
-.ew-conn-2   { animation: swapPulseAll  16s -12s infinite backwards; }
-.ew-bal-2    { animation: balUpdateAll  16s cubic-bezier(0.68, -0.55, 0.265, 1.55) -12s infinite backwards; }
+.ew-conn-1 {
+  animation: swapPulseAll 16s 0s infinite backwards;
+}
 
-.ew-bubble-3 { animation: floatInLeft   16s cubic-bezier(0.4, 0, 0.2, 1) -8s infinite backwards; }
-.ew-conn-3   { animation: swapPulseAll  16s -8s infinite backwards; }
-.ew-bal-3    { animation: balUpdateAll  16s cubic-bezier(0.68, -0.55, 0.265, 1.55) -8s infinite backwards; }
+.ew-bal-1 {
+  animation: balUpdateAll 16s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0s infinite backwards;
+}
 
-.ew-bubble-4 { animation: floatInRight  16s cubic-bezier(0.4, 0, 0.2, 1) -4s infinite backwards; }
-.ew-conn-4   { animation: swapPulseAll  16s -4s infinite backwards; }
-.ew-bal-4    { animation: balUpdateAll  16s cubic-bezier(0.68, -0.55, 0.265, 1.55) -4s infinite backwards; }
+.ew-bubble-2 {
+  animation: floatInRight 16s cubic-bezier(0.4, 0, 0.2, 1) -12s infinite backwards;
+}
+
+.ew-conn-2 {
+  animation: swapPulseAll 16s -12s infinite backwards;
+}
+
+.ew-bal-2 {
+  animation: balUpdateAll 16s cubic-bezier(0.68, -0.55, 0.265, 1.55) -12s infinite backwards;
+}
+
+.ew-bubble-3 {
+  animation: floatInLeft 16s cubic-bezier(0.4, 0, 0.2, 1) -8s infinite backwards;
+}
+
+.ew-conn-3 {
+  animation: swapPulseAll 16s -8s infinite backwards;
+}
+
+.ew-bal-3 {
+  animation: balUpdateAll 16s cubic-bezier(0.68, -0.55, 0.265, 1.55) -8s infinite backwards;
+}
+
+.ew-bubble-4 {
+  animation: floatInRight 16s cubic-bezier(0.4, 0, 0.2, 1) -4s infinite backwards;
+}
+
+.ew-conn-4 {
+  animation: swapPulseAll 16s -4s infinite backwards;
+}
+
+.ew-bal-4 {
+  animation: balUpdateAll 16s cubic-bezier(0.68, -0.55, 0.265, 1.55) -4s infinite backwards;
+}
 
 /* ════════════════════════════════
    FEATURES SECTION
@@ -1865,23 +2120,29 @@
     background: #ffffff;
     padding: 60px 0;
   }
+
   .ew-send-container {
     grid-template-columns: 1fr;
   }
-  .ew-send-left, .ew-send-right {
+
+  .ew-send-left,
+  .ew-send-right {
     padding: 20px;
     background: transparent;
   }
+
   .ew-send-right {
     background: #eff4fc;
     border-radius: 24px;
     margin: 20px;
     padding: 30px 20px;
   }
+
   .ew-send-form-card {
     box-shadow: none;
     padding: 20px;
   }
+
   .ew-send-title {
     font-size: 2.2rem;
   }
