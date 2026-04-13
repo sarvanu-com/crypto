@@ -1,0 +1,193 @@
+/* ═══════════════════════════════════════════════
+   DOCS PAGE — Premium Fintech Command Center
+═══════════════════════════════════════════════ */
+
+.docs-hero {
+  position: relative;
+  background: radial-gradient(circle at 50% 100%, rgba(0, 71, 255, 0.08) 0%, transparent 60%), #f8fafc;
+  padding: 100px 0 90px;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Ambient Data Grid Animation */
+.docs-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: 
+    linear-gradient(rgba(0, 71, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 71, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center bottom;
+  mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+  pointer-events: none;
+  animation: gridFloat 20s linear infinite;
+}
+
+@keyframes gridFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(40px); }
+}
+
+.docs-hero-content {
+  position: relative;
+  z-index: 10;
+}
+
+/* ═══════════ SEARCH COMMAND PALETTE ═══════════ */
+.docs-search {
+  max-width: 680px;
+  margin: 40px auto 0;
+  position: relative;
+}
+
+.docs-search input {
+  width: 100%;
+  padding: 24px 24px 24px 64px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 71, 255, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(255,255,255,0.4) inset;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #0b132b;
+  outline: none;
+  font-family: inherit;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.docs-search input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.docs-search input:focus {
+  border-color: #0047ff;
+  box-shadow: 0 20px 50px rgba(0, 71, 255, 0.12), 0 0 0 4px rgba(0, 71, 255, 0.1);
+  transform: translateY(-2px);
+  background: #ffffff;
+}
+
+.docs-search-icon {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #0047ff;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+.docs-search input:focus + .docs-search-icon {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.docs-search-kbd {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 6px;
+  pointer-events: none;
+}
+
+/* ═══════════ CONTENT MATRIX ═══════════ */
+.docs-content-section {
+  padding: 80px 0 120px;
+}
+
+.docs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* Docs Glass Panel */
+.docs-card {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 36px 32px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.docs-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 71, 255, 0.08);
+  border-color: rgba(0, 71, 255, 0.3);
+}
+
+.docs-icon-wrap {
+  width: 56px;
+  height: 56px;
+  background: var(--bg-surface-elevated);
+  color: var(--primary-blue);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  border: 1px solid var(--border-glass);
+  transition: all 0.3s ease;
+}
+
+.docs-card:hover .docs-icon-wrap {
+  background: var(--primary-blue);
+  color: #ffffff;
+  transform: scale(1.08) rotate(-4deg);
+  box-shadow: 0 10px 20px rgba(0, 71, 255, 0.25);
+}
+
+.docs-card h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.docs-card h3 svg {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  color: var(--primary-blue);
+}
+
+.docs-card:hover h3 svg {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.docs-card p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .docs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .docs-grid {
+    grid-template-columns: 1fr;
+  }
+  .docs-search input {
+    padding-left: 56px;
+    font-size: 1rem;
+  }
+}

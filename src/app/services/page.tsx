@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import CTA from '@/components/CTA';
 import PaymentGlobe from '@/components/PaymentGlobe';
 import { 
+  CircleDot,
   Link as LinkIcon, 
   SquareDashed, 
   Sliders, 
@@ -40,15 +41,53 @@ export const metadata: Metadata = {
 export default function Services() {
   return (
     <main className="services-page">
-      {/* Hero Section */}
-      <section className="services-hero text-center container">
-        <div className="mx-auto mb-6 flex justify-center">
-          <div className="services-badge">Infrastructure for the future</div>
+      <section className="services-hero">
+        <div className="container responsive-split">
+        <div className="services-hero-content" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', maxWidth: '600px' }}>
+          <div className="eyebrow" style={{ fontSize: '0.72rem', letterSpacing: '0.1em', marginBottom: '14px' }}>Infrastructure for the future</div>
+          <h1 className="hero-title" style={{ fontSize: 'clamp(2.2rem, 4vw, 3.4rem)', fontWeight: 800, lineHeight: '1.06', letterSpacing: '-0.03em', color: '#0b132b', marginBottom: '18px' }}>
+            What We Provide.<br />
+            Built for scale.
+          </h1>
+          <p className="hero-subtitle" style={{ fontSize: '0.975rem', color: '#475569', lineHeight: '1.7', marginBottom: '28px', maxWidth: '420px' }}>
+            One unified API integration connects your enterprise platform directly to the entire decentralized financial backbone.
+          </p>
+          <a href="/contact" className="btn" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#0047ff', color: '#fff', fontSize: '0.875rem', fontWeight: 600, padding: '12px 22px', borderRadius: '999px', boxShadow: '0 4px 14px rgba(0, 71, 255, 0.30)' }}>
+            <CircleDot size={15} />
+            Speak to an expert
+          </a>
         </div>
-        <h1 className="hero-title">What We Provide.</h1>
-        <p className="hero-subtitle mx-auto">
-          One unified API integration connects your enterprise platform directly to the entire decentralized financial backbone.
-        </p>
+
+        <div className="services-hero-visual" style={{ width: '100%', position: 'relative' }}>
+          <div className="api-graphic-wrapper">
+             <div className="api-rings-outer"></div>
+             <div className="api-rings-inner"></div>
+             <div className="api-rings"></div>
+             
+             {/* Connections with particles */}
+             <div className="api-connection conn-1"><div className="particle" style={{ animationDelay: '0s' }}></div></div>
+             <div className="api-connection conn-2"><div className="particle" style={{ animationDelay: '0.5s' }}></div></div>
+             <div className="api-connection conn-3"><div className="particle" style={{ animationDelay: '1s' }}></div></div>
+
+             {/* Center Core */}
+             <div className="api-core">
+                <Network size={40} className="api-core-icon" />
+                <span className="api-core-text">API CORE</span>
+             </div>
+
+             {/* Satellite Nodes */}
+             <div className="api-node node-1">
+                <Database size={24} />
+             </div>
+             <div className="api-node node-2">
+                <ArrowRightLeft size={24} />
+             </div>
+             <div className="api-node node-3">
+                <Wallet size={24} />
+             </div>
+          </div>
+        </div>
+        </div>
       </section>
 
       {/* 1. Cross-border Payments Section (Image 2 style) */}

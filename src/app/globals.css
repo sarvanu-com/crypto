@@ -52,6 +52,7 @@ body {
   background-color: var(--bg-obsidian);
   color: var(--text-primary);
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 1.125rem; /* Increased default body font size */
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   width: 100%;
@@ -97,10 +98,25 @@ ul {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
-  font-weight: 700;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-weight: 800;
   line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: #0B132B;
+}
+
+h1 {
+  font-size: clamp(3rem, 5vw + 1rem, 5rem);
+}
+
+h2 {
+  font-size: clamp(2.25rem, 4vw + 1rem, 3.5rem);
   letter-spacing: -0.03em;
-  color: var(--text-primary);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 2vw + 1rem, 2rem);
+  letter-spacing: -0.02em;
 }
 
 /* Gradient Text */
@@ -164,17 +180,32 @@ h1, h2, h3, h4, h5, h6 {
 .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
 .grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
 
+.responsive-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .responsive-split {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
 /* ===================== BUTTONS ===================== */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 24px;
-  border-radius: var(--radius-md);
+  padding: 14px 28px; /* Fuller padding for bolder look */
+  border-radius: 8px; /* Harder border-radius matching screenshot */
+  font-family: 'Inter', system-ui, sans-serif;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1rem;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  gap: 8px;
+  gap: 12px; /* A bit more gap between text and icon */
   letter-spacing: 0.01em;
   cursor: pointer;
 }
@@ -262,6 +293,59 @@ h1, h2, h3, h4, h5, h6 {
 .gap-6  { gap: 24px; }
 .gap-8  { gap: 32px; }
 
+/* Eyebrow Label */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #0047FF;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  background-color: #0047FF;
+  border-radius: 50%;
+}
+
+/* Info List Style from screenshot */
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 32px 0;
+}
+.info-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  font-weight: 600;
+  color: #0B132B;
+  font-size: 1.125rem;
+}
+.info-list-icon {
+  width: 24px;
+  height: 24px;
+  background: rgba(0, 71, 255, 0.08);
+  color: #0047FF;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.info-list-icon svg {
+  width: 14px;
+  height: 14px;
+}
+
 .mb-2  { margin-bottom: 8px; }
 .mb-4  { margin-bottom: 16px; }
 .mb-6  { margin-bottom: 24px; }
@@ -277,11 +361,15 @@ h1, h2, h3, h4, h5, h6 {
 .text-blue      { color: var(--primary-blue); }
 
 .font-bold   { font-weight: 700; }
+.text-xs     { font-size: 0.75rem; }
 .text-sm     { font-size: 0.875rem; }
+.text-base   { font-size: 1rem; }
 .text-lg     { font-size: 1.125rem; }
 .text-xl     { font-size: 1.25rem; }
-.text-3xl    { font-size: 1.875rem; }
 .text-2xl    { font-size: 1.5rem; }
+.text-3xl    { font-size: 1.875rem; }
+.text-4xl    { font-size: 2.25rem; }
+.text-5xl    { font-size: 3rem; }
 .max-w-2xl   { max-width: 672px; }
 
 .inline    { display: inline; }

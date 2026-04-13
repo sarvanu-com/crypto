@@ -1,0 +1,40 @@
+/* ═══════════════════════════════════════════════
+   LEGAL PAGES — Premium Light Theme
+═══════════════════════════════════════════════ */
+
+.legal-hero {
+  background: linear-gradient(155deg, #eef2ff 0%, #e0e7ff 45%, #dbeafe 100%);
+  padding: 120px 0 60px;
+  text-align: center;
+}
+
+.legal-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  color: #475569;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.legal-content h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #0b132b;
+  margin-top: 60px;
+  margin-bottom: 24px;
+}
+
+.legal-content p {
+  margin-bottom: 24px;
+}
+
+.legal-content ul {
+  margin-bottom: 24px;
+  padding-left: 24px;
+  list-style-type: disc;
+}
+
+.legal-content li {
+  margin-bottom: 12px;
+}

@@ -1,23 +1,155 @@
 .services-page {
-  padding-top: 100px;
-  background: #F8FAFC; /* Light obsidian/white background */
+  padding-top: 0px; /* Remove top padding so full-width hero touches nav */
+  background: #F8FAFC; 
   color: #0b132b;
   overflow-x: hidden;
 }
 
 /* --- Hero --- */
 .services-hero {
-  padding: 80px 0 120px;
   position: relative;
-  background: linear-gradient(155deg, #eef2ff 0%, #e0e7ff 45%, #dbeafe 100%);
+  width: 100%;
+  background: linear-gradient(155deg, #F0F5FF 0%, #E6EDFB 50%, #dbeafe 100%);
+  padding-top: 100px; /* Shift padding inside hero so background goes under nav */
+  padding-bottom: 20px;
 }
+
+/* API Graphic Styles */
+.api-graphic-wrapper {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.api-core {
+  width: 140px;
+  height: 140px;
+  background: white;
+  border-radius: 30px;
+  border: 1px solid rgba(0, 71, 255, 0.15);
+  box-shadow: 0 20px 50px rgba(0, 71, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  position: relative;
+  gap: 12px;
+}
+
+.api-core-icon {
+  color: #0047FF;
+  animation: pulseGlow 2s infinite;
+}
+
+.api-core-text {
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #0B132B;
+  font-size: 0.8rem;
+}
+
+.api-rings {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px dashed rgba(0, 71, 255, 0.2);
+  animation: spinSlow 30s linear infinite;
+  z-index: 1;
+}
+
+.api-rings-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 1px dashed rgba(0, 71, 255, 0.15);
+  animation: spinSlowReverse 40s linear infinite;
+  z-index: 1;
+}
+
+.api-rings-outer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 71, 255, 0.05);
+  z-index: 1;
+}
+
+.api-node {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  background: white;
+  border: 1px solid rgba(0, 71, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #475569;
+  z-index: 5;
+  transition: all 0.3s ease;
+}
+
+.api-node:hover {
+  transform: scale(1.1);
+  border-color: #0047FF;
+  color: #0047FF;
+  box-shadow: 0 15px 40px rgba(0, 71, 255, 0.15);
+}
+
+.node-1 { top: 0; left: 50%; margin-left: -32px; animation: floatNode1 4s ease-in-out infinite; }
+.node-2 { bottom: 30px; left: 10px; animation: floatNode2 5s ease-in-out infinite; }
+.node-3 { bottom: 30px; right: 10px; animation: floatNode3 6s ease-in-out infinite; }
+
+.api-connection {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform-origin: 0 50%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(0,71,255,0.4) 0%, rgba(0,71,255,0) 100%);
+  z-index: 2;
+}
+
+.conn-1 { width: 140px; transform: translate(0, -1px) rotate(-90deg); }
+.conn-2 { width: 160px; transform: translate(0, -1px) rotate(145deg); }
+.conn-3 { width: 160px; transform: translate(0, -1px) rotate(35deg); }
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #0047FF;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #0047FF;
+  animation: particleMove 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes spinSlow { 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+@keyframes spinSlowReverse { 100% { transform: translate(-50%, -50%) rotate(-360deg); } }
+@keyframes floatNode1 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes floatNode2 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes floatNode3 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(10px); } }
+@keyframes particleMove { 0% { left: 0%; opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } 100% { left: 100%; opacity: 0; } }
 
 .hero-title {
   font-size: 5rem;
-  font-weight: 850;
   margin-bottom: 24px;
-  color: #0b132b;
-  letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
@@ -87,10 +219,7 @@
 
 .feature-headline {
   font-size: 3.5rem;
-  font-weight: 800;
-  line-height: 1.1;
   margin-bottom: 32px;
-  color: #0b132b;
 }
 
 .feature-desc {

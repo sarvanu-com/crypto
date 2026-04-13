@@ -1,10 +1,17 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Hexagon, ArrowUpRight } from 'lucide-react';
 import './Footer.css';
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  // Hide the marketing footer entirely on application interfaces
+  if (pathname === '/dashboard' || pathname === '/login') {
+    return null;
+  }
   return (
     <footer className="footer-dark">
       <div className="watermark-bg">TEXNOVA</div>
@@ -13,13 +20,13 @@ export default function Footer() {
           <div className="footer-brand-col">
             <Link href="/" className="logo mb-6 inline-flex items-center gap-2">
               <Hexagon size={30} style={{ color: 'var(--primary-blue)' }} />
-              <span style={{ fontSize: '1.15rem', fontWeight: 900, letterSpacing: '0.08em', color: '#FFFFFF' }}>TEXNOVA</span>
+              <span className="text-lg" style={{ fontWeight: 900, letterSpacing: '0.08em', color: '#FFFFFF' }}>TEXNOVA</span>
             </Link>
-            <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '1rem', maxWidth: '22rem', lineHeight: 1.7 }}>
+            <p className="text-base" style={{ color: 'rgba(255,255,255,0.55)', maxWidth: '22rem', lineHeight: 1.7 }}>
               The infrastructure standard for instantaneous, compliant, global value transfer.
             </p>
           </div>
-          
+
           <div className="footer-links-col">
             <h4 className="footer-category">Platform</h4>
             <ul>
@@ -34,12 +41,11 @@ export default function Footer() {
             <h4 className="footer-category">Developers</h4>
             <ul>
               <li><Link href="/docs">Documentation <ArrowUpRight size={14} className="inline ml-1" /></Link></li>
-              <li><Link href="/api">API Reference</Link></li>
-              <li><Link href="/sdks">SDKs & Tools</Link></li>
-              <li><Link href="/github">GitHub</Link></li>
+              <li><Link href="/developers">API Reference</Link></li>
+              <li><Link href="/developers">SDKs & Tools</Link></li>
             </ul>
           </div>
-          
+
           <div className="footer-links-col">
             <h4 className="footer-category">Company</h4>
             <ul>
@@ -53,15 +59,15 @@ export default function Footer() {
 
         <div className="footer-legal-bar flex justify-between items-center" style={{ color: 'rgba(255,255,255,0.4)' }}>
           <div className="flex items-center gap-6">
-             <span style={{ fontSize: '0.875rem' }}>&copy; {new Date().getFullYear()} Texnova Global.</span>
-             <div className="flex items-center gap-4 text-sm">
-               <Link href="/privacy" style={{ color: 'rgba(255,255,255,0.4)', transition: 'color 0.2s' }} onMouseEnter={e => (e.currentTarget.style.color='#fff')} onMouseLeave={e => (e.currentTarget.style.color='rgba(255,255,255,0.4)')}>Privacy</Link>
-               <Link href="/terms" style={{ color: 'rgba(255,255,255,0.4)', transition: 'color 0.2s' }} onMouseEnter={e => (e.currentTarget.style.color='#fff')} onMouseLeave={e => (e.currentTarget.style.color='rgba(255,255,255,0.4)')}>Terms</Link>
-               <Link href="/security" style={{ color: 'rgba(255,255,255,0.4)', transition: 'color 0.2s' }} onMouseEnter={e => (e.currentTarget.style.color='#fff')} onMouseLeave={e => (e.currentTarget.style.color='rgba(255,255,255,0.4)')}>Security</Link>
-             </div>
+            <span style={{ fontSize: '0.875rem' }}>&copy; {new Date().getFullYear()} Texnova Global.</span>
+            <div className="flex items-center gap-4 text-sm">
+              <Link href="/privacy" style={{ color: 'rgba(255,255,255,0.4)', transition: 'color 0.2s' }} onMouseEnter={e => (e.currentTarget.style.color = '#fff')} onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}>Privacy</Link>
+              <Link href="/terms" style={{ color: 'rgba(255,255,255,0.4)', transition: 'color 0.2s' }} onMouseEnter={e => (e.currentTarget.style.color = '#fff')} onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}>Terms</Link>
+              <Link href="/security" style={{ color: 'rgba(255,255,255,0.4)', transition: 'color 0.2s' }} onMouseEnter={e => (e.currentTarget.style.color = '#fff')} onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}>Security</Link>
+            </div>
           </div>
           <div className="flex items-center gap-4">
-             <div style={{ padding: '4px 12px', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '9999px', fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)', background: 'rgba(255,255,255,0.04)' }}>System: All operations normal</div>
+            <div className="text-xs" style={{ padding: '4px 12px', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '9999px', color: 'rgba(255,255,255,0.5)', background: 'rgba(255,255,255,0.04)' }}>System: All operations normal</div>
           </div>
         </div>
       </div>

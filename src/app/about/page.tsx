@@ -1,4 +1,5 @@
 import { Building2, ShieldCheck, HardDrive, Handshake } from 'lucide-react';
+import CTA from '@/components/CTA';
 import './about.css';
 
 export const metadata = {
@@ -95,21 +96,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="section text-center">
-        <div className="container">
-          <Handshake size={48} className="text-accent mx-auto block mb-4" />
-          <h2 className="mb-4">Get in touch</h2>
-          <p className="text-secondary mb-8" style={{ maxWidth: '600px', margin: '0 auto' }}>
-            Are you a high-volume business or enterprise? Our technical solutions team is ready to help you architect your custom payment flow.
-          </p>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
-            <a href="#" className="btn btn-primary">Contact Sales</a>
-            <div style={{ color: 'var(--text-secondary)' }}>
-              Or call us directly: <a href="tel:+14243414743" style={{ color: 'var(--accent)', textDecoration: 'none', fontWeight: 500 }}>+1 424 341 4743</a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CTA />
     </div>
   );
 }

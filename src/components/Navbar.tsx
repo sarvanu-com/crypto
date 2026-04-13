@@ -53,7 +53,7 @@ const PRODUCT_SECTIONS = [
     label: 'Security & Compliance',
     desc: 'Stay audit-ready and operate safely across 80+ jurisdictions.',
     items: [
-      { Icon: Shield, label: 'Compliance', desc: 'Deploy AML resources more effectively.',  href: '/security' },
+      { Icon: Shield, label: 'Compliance', desc: 'Deploy AML resources more effectively.',  href: '/security#compliance' },
       { Icon: Lock,   label: 'Security',   desc: "We're ISO 27001:2022 certified.",         href: '/security' },
     ],
     feature: {
@@ -92,6 +92,7 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState(PRODUCT_SECTIONS[0].id);
   const hideTimer                         = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', onScroll);
@@ -102,6 +103,11 @@ export default function Navbar() {
   const closeProducts = () => { hideTimer.current = setTimeout(() => setShowProducts(false), 140); };
 
   const currentSection = PRODUCT_SECTIONS.find(s => s.id === activeSection)!;
+
+  // Hide the marketing navbar entirely on application interfaces (except dashboard)
+  if (pathname === '/login') {
+    return null;
+  }
 
   return (
     <nav className={`navbar ${scrolled ? 'nav-scrolled' : ''}`}>
@@ -218,7 +224,7 @@ export default function Navbar() {
         {/* Desktop actions */}
         <div className="nav-actions">
           <Link href="/login"     className="nav-login">Sign In</Link>
-          <Link href="/dashboard" className="btn btn-primary">Launch App</Link>
+          <Link href="/dashboard" className="btn btn-primary">Speak to an expert</Link>
         </div>
 
         {/* Mobile toggle */}

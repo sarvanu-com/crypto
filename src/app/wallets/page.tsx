@@ -522,7 +522,7 @@ export default function Wallets() {
               </li>
             </ul>
 
-            <button className="ew-send-demo-btn">
+            <button className="btn btn-primary">
               <PlayCircle size={20} />
               See it in action — try the demo
             </button>

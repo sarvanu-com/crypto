@@ -59,10 +59,10 @@ export default function Home() {
               </div>
 
               <div className="hero-actions">
-                <Link href="/dashboard" className="btn btn-primary" style={{padding:'14px 32px',fontSize:'1rem'}}>
+                <Link href="/dashboard" className="btn btn-primary text-base" style={{padding:'14px 32px'}}>
                   Start Sending — 0.1% <ArrowRight size={18} />
                 </Link>
-                <Link href="/developers" className="btn btn-ghost" style={{padding:'14px 28px',fontSize:'1rem'}}>
+                <Link href="/developers" className="btn btn-ghost text-base" style={{padding:'14px 28px'}}>
                   How It Works <ArrowRight size={18} />
                 </Link>
               </div>
@@ -157,7 +157,7 @@ export default function Home() {
       <section className="section">
         <div className="container">
           <div className="section-eyebrow">Infrastructure</div>
-          <h2 style={{ fontSize: '3rem', marginBottom: '16px' }}>Live Infrastructure.</h2>
+          <h2 className="text-5xl" style={{ marginBottom: '16px' }}>Live Infrastructure.</h2>
           <p className="text-secondary text-lg max-w-2xl">
             Compose specialized financial apps using our modular building blocks — natively built for Web3 and optimized for the lowest-possible fees.
           </p>
@@ -170,7 +170,7 @@ export default function Home() {
                 Generate white-labeled deposit addresses instantly for your users. We handle the entire custody stack — all at <strong>0.1% per transfer</strong>.
               </p>
               <div style={{ padding: '20px', background: '#0D1117', borderRadius: '12px', border: '1px solid rgba(0,71,255,0.15)' }}>
-                <pre style={{ color: '#7dd3fc', fontSize: '0.85rem', overflowX: 'auto', margin: 0, lineHeight: 1.7 }}>
+                <pre className="text-sm" style={{ color: '#7dd3fc', overflowX: 'auto', margin: 0, lineHeight: 1.7 }}>
                   <code>{`POST /v2/transfer\n{\n  "amount": 10000,\n  "currency": "USDC",\n  "fee_rate": "0.001",   // 0.1%\n  "network": "base",\n  "to": "0x7F5...92A"\n}\n\n// fee: $10.00  |  recipient gets: $9,990.00`}</code>
                 </pre>
               </div>
@@ -243,7 +243,7 @@ export default function Home() {
           <div className="grid grid-cols-2" style={{ alignItems: 'center', gap: '80px' }}>
             <div>
               <div className="section-eyebrow">Developer API</div>
-              <h2 style={{ fontSize: '3rem', marginBottom: '16px' }}>
+              <h2 className="text-5xl" style={{ marginBottom: '16px' }}>
                 Developer First. <br /><span className="text-gradient-blue">Always.</span>
               </h2>
               <p className="text-secondary text-lg mb-8">
@@ -278,9 +278,9 @@ export default function Home() {
                 <div className="dev-dot" style={{ background: '#FF5F56' }}></div>
                 <div className="dev-dot" style={{ background: '#FFBD2E' }}></div>
                 <div className="dev-dot" style={{ background: '#27C93F' }}></div>
-                <span style={{color:'rgba(255,255,255,0.3)',fontSize:'0.8rem',marginLeft:'auto'}}>texnova-sdk.ts</span>
+                <span className="text-sm" style={{color:'rgba(255,255,255,0.3)',marginLeft:'auto'}}>texnova-sdk.ts</span>
               </div>
-              <pre style={{ padding: '28px', margin: 0, color: '#A6ACCD', fontSize: '0.9rem', overflowX: 'auto', lineHeight: '1.7' }}>
+              <pre className="text-sm" style={{ padding: '28px', margin: 0, color: '#A6ACCD', overflowX: 'auto', lineHeight: '1.7' }}>
                 <code>
                   <span style={{ color: '#89DDFF' }}>import</span>{' { Texnova }'} <span style={{ color: '#89DDFF' }}>from</span> <span style={{ color: '#C3E88D' }}>&apos;@texnova/sdk&apos;</span>;{'\n\n'}
                   <span style={{ color: '#89DDFF' }}>const</span> client = <span style={{ color: '#89DDFF' }}>new</span> <span style={{ color: '#FFCB6B' }}>Texnova</span>(process.env.<span style={{ color: '#F07178' }}>TEXNOVA_KEY</span>);{'\n\n'}
