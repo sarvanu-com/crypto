@@ -44,16 +44,17 @@ export default function Services() {
       <section className="services-hero">
         <div className="container responsive-split">
         <div className="services-hero-content" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', maxWidth: '600px' }}>
-          <div className="eyebrow" style={{ fontSize: '0.72rem', letterSpacing: '0.1em', marginBottom: '14px' }}>Infrastructure for the future</div>
-          <h1 className="hero-title" style={{ fontSize: 'clamp(2.2rem, 4vw, 3.4rem)', fontWeight: 800, lineHeight: '1.06', letterSpacing: '-0.03em', color: '#0b132b', marginBottom: '18px' }}>
-            What We Provide.<br />
+          <div className="usp-badge" style={{ marginBottom: '20px' }}>
+            <Zap size={14} style={{ marginRight: '6px' }} /> Infrastructure for the future
+          </div>
+          <h1 className="hero-title" style={{ fontSize: 'clamp(2.5rem, 5vw, 4.2rem)', fontWeight: 800, lineHeight: '1.02', letterSpacing: '-0.04em', color: '#0F172A', marginBottom: '24px', animation: 'fadeInUp 0.8s ease both' }}>
+            What We <span className="text-accent-gradient">Provide.</span><br />
             Built for scale.
           </h1>
-          <p className="hero-subtitle" style={{ fontSize: '0.975rem', color: '#475569', lineHeight: '1.7', marginBottom: '28px', maxWidth: '420px' }}>
+          <p className="hero-subtitle" style={{ fontSize: '1.15rem', color: '#475569', lineHeight: '1.7', marginBottom: '36px', maxWidth: '440px', animation: 'fadeInUp 0.8s ease both 0.1s' }}>
             One unified API integration connects your enterprise platform directly to the entire decentralized financial backbone.
           </p>
-          <a href="/contact" className="btn" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#0047ff', color: '#fff', fontSize: '0.875rem', fontWeight: 600, padding: '12px 22px', borderRadius: '999px', boxShadow: '0 4px 14px rgba(0, 71, 255, 0.30)' }}>
-            <CircleDot size={15} />
+          <a href="/contact" className="btn btn-primary" style={{ padding: '14px 28px', boxShadow: '0 10px 30px rgba(0, 71, 255, 0.2)' }}>
             Speak to an expert
           </a>
         </div>
@@ -99,7 +100,7 @@ export default function Services() {
               CROSS-BORDER PAYMENTS
             </div>
             <h2 className="feature-headline">
-              Take full control over your payment stack.
+              Take full <span className="text-accent-gradient">control</span> over your payment stack.
             </h2>
             
             <ul className="premium-list">
@@ -156,7 +157,7 @@ export default function Services() {
               MERCHANT PAYMENTS
             </div>
             <h2 className="feature-headline">
-              Accelerate your go-to market.
+              Accelerate your <span className="text-accent-gradient">go-to market.</span>
             </h2>
             
             <ul className="merchant-feature-list">
@@ -264,7 +265,7 @@ export default function Services() {
               TRADING & TREASURY
             </div>
             <h2 className="feature-headline">
-              Orchestrate payments across fiat and crypto globally.
+              <span className="text-accent-gradient">Orchestrate</span> payments across fiat and crypto.
             </h2>
             
             <ul className="merchant-feature-list">
@@ -388,32 +389,32 @@ export default function Services() {
           </div>
           
           <div className="grid grid-cols-3 gap-8 model-grid">
-            <div className="glass-panel text-center p-8 model-card" style={{ background: '#F8FAFC', padding: '40px' }}>
-              <div className="model-icon mx-auto mb-6" style={{ background: 'rgba(0, 71, 255, 0.08)', width: '80px', height: '80px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <DollarSign size={40} style={{ color: 'var(--primary-blue)' }} />
+            <div className="glass-panel text-center p-8 model-card" style={{ background: '#FFFFFF', padding: '48px 36px', borderRadius: '28px', border: '1px solid rgba(0,71,255,0.06)', boxShadow: '0 10px 30px rgba(0,0,0,0.02)' }}>
+              <div className="model-icon mx-auto mb-6" style={{ background: 'rgba(0, 71, 255, 0.05)', width: '84px', height: '84px', borderRadius: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0047FF' }}>
+                <DollarSign size={38} />
               </div>
-              <h4 className="text-2xl text-primary mb-4">Flat 0.1% Processing</h4>
-              <p className="text-secondary">
+              <h4 className="text-2xl font-bold mb-4" style={{ color: '#0F172A', letterSpacing: '-0.02em' }}>Flat 0.1% Processing</h4>
+              <p style={{ color: '#475569', lineHeight: '1.6' }}>
                 Strictly flat processing fee on every transaction. Zero hidden spread margins or surprise thresholds.
               </p>
             </div>
             
-            <div className="glass-panel text-center p-8 model-card" style={{ background: '#F8FAFC', padding: '40px' }}>
-              <div className="model-icon mx-auto mb-6" style={{ background: 'rgba(0, 71, 255, 0.08)', width: '80px', height: '80px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <BarChart3 size={40} style={{ color: 'var(--primary-blue)' }} />
+            <div className="glass-panel text-center p-8 model-card" style={{ background: '#FFFFFF', padding: '48px 36px', borderRadius: '28px', border: '1px solid rgba(0,71,255,0.06)', boxShadow: '0 10px 30px rgba(0,0,0,0.02)' }}>
+              <div className="model-icon mx-auto mb-6" style={{ background: 'rgba(0, 71, 255, 0.05)', width: '84px', height: '84px', borderRadius: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0047FF' }}>
+                <BarChart3 size={38} />
               </div>
-              <h4 className="text-2xl text-primary mb-4">Enterprise SaaS Tiers</h4>
-              <p className="text-secondary">
+              <h4 className="text-2xl font-bold mb-4" style={{ color: '#0F172A', letterSpacing: '-0.02em' }}>Enterprise SaaS Tiers</h4>
+              <p style={{ color: '#475569', lineHeight: '1.6' }}>
                 Dedicated hosting and scalable API subscriptions for major institutions starting at $3.5k/mo.
               </p>
             </div>
             
-            <div className="glass-panel text-center p-8 model-card" style={{ background: '#F8FAFC', padding: '40px' }}>
-              <div className="model-icon mx-auto mb-6" style={{ background: 'rgba(0, 71, 255, 0.08)', width: '80px', height: '80px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <Globe size={40} style={{ color: 'var(--primary-blue)' }} />
+            <div className="glass-panel text-center p-8 model-card" style={{ background: '#FFFFFF', padding: '48px 36px', borderRadius: '28px', border: '1px solid rgba(0,71,255,0.06)', boxShadow: '0 10px 30px rgba(0,0,0,0.02)' }}>
+              <div className="model-icon mx-auto mb-6" style={{ background: 'rgba(0, 71, 255, 0.05)', width: '84px', height: '84px', borderRadius: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0047FF' }}>
+                <Globe size={38} />
               </div>
-              <h4 className="text-2xl text-primary mb-4">Zero Custody Fees</h4>
-              <p className="text-secondary">
+              <h4 className="text-2xl font-bold mb-4" style={{ color: '#0F172A', letterSpacing: '-0.02em' }}>Zero Custody Fees</h4>
+              <p style={{ color: '#475569', lineHeight: '1.6' }}>
                 Holding 1 million or 1 billion on our platform costs you identically: $0. We never charge custody taxes.
               </p>
             </div>

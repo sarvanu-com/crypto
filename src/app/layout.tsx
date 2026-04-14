@@ -11,6 +11,14 @@ export const metadata: Metadata = {
   },
   description: 'Global crypto payment infrastructure with ultra-low 0.1% fees, instant settlement, and enterprise-grade security.',
   keywords: ['Crypto Payment Gateway', 'Enterprise Blockchain', 'B2B Payments', 'Stablecoin Settlement', 'RWA Tokenization', 'MPC Wallets'],
+  authors: [{ name: 'Texnova Team' }],
+  creator: 'Texnova',
+  publisher: 'Texnova',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   alternates: {
     canonical: '/',
   },
@@ -19,20 +27,58 @@ export const metadata: Metadata = {
     description: 'Global crypto payment infrastructure with ultra-low 0.1% fees.',
     url: 'https://texnova.org',
     siteName: 'Texnova',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Texnova - Enterprise Crypto Payment gateway',
+      },
+    ],
+    locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Texnova | Enterprise Crypto Payment Gateway',
     description: 'Global crypto payment infrastructure with ultra-low 0.1% fees, instant settlement, and enterprise-grade security.',
+    images: ['/og-image.png'],
+    creator: '@texnova',
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   icons: {
-    icon: '/icon.svg',
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/icon.svg' }
+    ],
+    shortcut: '/icon.svg',
+    apple: '/icon.svg',
+    other: [
+      {
+        rel: 'apple-touch-icon-precomposed',
+        url: '/icon.svg',
+      },
+    ],
   },
+  manifest: '/manifest.json',
+};
+
+export const viewport: Viewport = {
+  themeColor: '#0047FF',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 const jsonLd = {
@@ -41,19 +87,7 @@ const jsonLd = {
   name: 'Texnova',
   url: 'https://texnova.org',
   logo: 'https://texnova.org/icon.svg',
-  sameAs: [
-    'https://twitter.com/texnova',
-    'https://linkedin.com/company/texnova'
-  ],
   description: 'Enterprise crypto payment gateway providing stablecoin settlement, programmatic wallets, and RWA tokenization.'
-};
-
-export const viewport: Viewport = {
-  themeColor: '#03050A',
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
 };
 
 export default function RootLayout({

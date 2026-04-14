@@ -1,0 +1,459 @@
+/* ═══════════════════════════════════════════════════
+   LOGIN — Premium Light Portal
+   Matches the Texnova light fintech design system
+═══════════════════════════════════════════════════ */
+
+.login-portal {
+  position: relative;
+  min-height: 100vh;
+  margin-top: -80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  background: #F8FAFC;
+  padding: 80px 24px;
+}
+
+/* Same dot-grid as the rest of the site */
+.login-portal::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-image:
+    radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  opacity: 0.4;
+  mask-image: linear-gradient(to bottom, black 0%, transparent 80%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 80%);
+}
+
+/* ─── Large decorative watermark hexagon ─── */
+.login-watermark-hex {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 580px;
+  height: 580px;
+  opacity: 0.025;
+  pointer-events: none;
+  color: #0047FF;
+  z-index: 0;
+}
+
+/* Subtle top accent line */
+.login-accent-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 15%, #0047FF 50%, transparent 85%);
+  opacity: 0.7;
+  z-index: 5;
+}
+
+/* Soft blue ambient glow behind form */
+.login-ambient {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 71, 255, 0.04) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Main content wrapper ─── */
+.login-main {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 440px;
+}
+
+/* ─── Logo (reuses .logo / .logo-icon / .logo-text from Navbar.css) ─── */
+.login-portal .logo {
+  animation: loginFadeDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+@keyframes loginFadeDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Card ─── */
+.login-card {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+  padding: 44px 40px;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    0 8px 32px rgba(0, 0, 0, 0.06),
+    0 24px 60px rgba(0, 0, 0, 0.03);
+  animation: loginSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+  opacity: 0;
+}
+
+@keyframes loginSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Card header */
+.login-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.login-title {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #0B132B;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.login-subtitle {
+  font-size: 0.95rem;
+  color: #64748B;
+  line-height: 1.5;
+}
+
+/* ─── Form ─── */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.login-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #334155;
+  letter-spacing: 0.01em;
+}
+
+.login-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.login-input {
+  width: 100%;
+  padding: 14px 16px 14px 46px;
+  background: #F8FAFC;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 12px;
+  color: #0B132B;
+  font-size: 0.95rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.login-input::placeholder {
+  color: #94A3B8;
+}
+
+.login-input:focus {
+  border-color: #0047FF;
+  background: #fff;
+  box-shadow: 0 0 0 3.5px rgba(0, 71, 255, 0.08);
+}
+
+.login-input-icon {
+  position: absolute;
+  left: 15px;
+  color: #94A3B8;
+  pointer-events: none;
+  transition: color 0.3s ease;
+}
+
+.login-input:focus ~ .login-input-icon,
+.login-input-wrap:focus-within .login-input-icon {
+  color: #0047FF;
+}
+
+.login-pw-toggle {
+  position: absolute;
+  right: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #94A3B8;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.login-pw-toggle:hover {
+  color: #475569;
+}
+
+/* Options */
+.login-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -2px;
+}
+
+.login-remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.84rem;
+  color: #64748B;
+  cursor: pointer;
+  user-select: none;
+}
+
+.login-remember input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #0047FF;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.login-forgot {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #0047FF;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.login-forgot:hover {
+  color: #0038CC;
+}
+
+/* ─── Submit Button ─── */
+.login-submit {
+  position: relative;
+  width: 100%;
+  padding: 15px 24px;
+  margin-top: 6px;
+  background: #0047FF;
+  color: #fff;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 71, 255, 0.3);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.login-submit::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -80%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+  transform: skewX(-20deg);
+  animation: submitShine 4s ease-in-out infinite;
+}
+
+@keyframes submitShine {
+  0%   { left: -80%; }
+  25%  { left: 130%; }
+  100% { left: 130%; }
+}
+
+.login-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 71, 255, 0.4);
+  background: #0038CC;
+}
+
+.login-submit:active {
+  transform: translateY(0);
+}
+
+.login-submit svg {
+  transition: transform 0.25s ease;
+}
+
+.login-submit:hover svg {
+  transform: translateX(3px);
+}
+
+/* ─── Divider ─── */
+.login-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 4px 0;
+}
+
+.login-divider-line {
+  flex: 1;
+  height: 1px;
+  background: #E2E8F0;
+}
+
+.login-divider-text {
+  font-size: 0.78rem;
+  color: #94A3B8;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ─── SSO Button ─── */
+.login-sso {
+  width: 100%;
+  padding: 14px 24px;
+  background: #F8FAFC;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 12px;
+  color: #334155;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.25s ease;
+}
+
+.login-sso:hover {
+  background: #F1F5F9;
+  border-color: #CBD5E1;
+}
+
+.login-sso svg {
+  color: #64748B;
+}
+
+/* ─── Footer link ─── */
+.login-footer {
+  margin-top: 28px;
+  text-align: center;
+  animation: loginSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
+  opacity: 0;
+}
+
+.login-footer-text {
+  font-size: 0.9rem;
+  color: #64748B;
+}
+
+.login-footer-text a {
+  color: #0047FF;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 4px;
+  transition: color 0.2s;
+}
+
+.login-footer-text a:hover {
+  color: #0038CC;
+}
+
+/* ─── Trust Strip ─── */
+.login-trust-strip {
+  margin-top: 48px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  animation: loginSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+  opacity: 0;
+}
+
+.login-trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #94A3B8;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.login-trust-badge svg {
+  color: #0047FF;
+  opacity: 0.45;
+}
+
+
+/* ═══════ RESPONSIVE ═══════ */
+@media (max-width: 640px) {
+  .login-portal {
+    padding: 32px 16px;
+  }
+
+  .login-card {
+    padding: 32px 24px;
+    border-radius: 16px;
+  }
+
+  .login-title {
+    font-size: 1.4rem;
+  }
+
+  .login-logo-name {
+    font-size: 1.2rem;
+  }
+
+  .login-watermark-hex {
+    width: 320px;
+    height: 320px;
+  }
+
+  .login-trust-strip {
+    gap: 14px;
+    flex-wrap: wrap;
+    padding: 0 16px;
+  }
+
+  .login-trust-badge {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .login-card {
+    padding: 28px 20px;
+  }
+
+  .login-trust-strip {
+    display: none;
+  }
+}

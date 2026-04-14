@@ -1,47 +1,274 @@
+/* ═══════════════════════════════════════════════════
+   ABOUT US — Texnova Premium Light Aesthetic
+   BVNK / Fintech inspired clean layout
+   ═══════════════════════════════════════════════════ */
+
+.about-page {
+  padding-bottom: 0;
+  overflow-x: hidden;
+}
+
+/* ─── Hero Section ─── */
+.about-hero {
+  padding: 100px 0 80px;
+  background: #FFFFFF;
+  position: relative;
+}
+
+.about-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 18px;
+  background: rgba(0, 71, 255, 0.08);
+  border: 1px solid rgba(0, 71, 255, 0.15);
+  border-radius: 999px;
+  color: var(--primary-blue);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 28px;
+  animation: fadeInUp 0.6s ease both;
+}
+
+.about-hero h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 28px;
+  animation: fadeInUp 0.7s ease both 0.1s;
+}
+
+.about-hero h1 .text-accent-gradient {
+  background: linear-gradient(135deg, #0047FF, #4F46E5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-hero p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 780px;
+  margin: 0 auto;
+  font-weight: 400;
+  animation: fadeInUp 0.8s ease both 0.2s;
+}
+
+/* ─── Story / Why Section ─── */
+.about-story {
+  padding: 100px 0;
+  background: var(--bg-obsidian);
+  border-top: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 80px;
+}
+
+.story-content h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.story-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.story-text p {
+  margin-bottom: 20px;
+}
+
+/* ─── Stats Grid ─── */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 24px;
 }
 
-.stat {
-  padding: 32px 24px;
+.stat-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+  padding: 40px 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(0, 71, 255, 0.08);
+  border-color: rgba(0, 71, 255, 0.1);
 }
 
 .stat-number {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 800;
-  margin-bottom: 8px;
+  color: var(--primary-blue);
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+  display: block;
 }
 
 .stat-label {
-  color: var(--text-secondary);
-  font-weight: 500;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ─── Trust Pillars Section ─── */
+.about-trust {
+  padding: 120px 0;
+  background: #FFFFFF;
 }
 
 .trust-pillars {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
+  margin-top: 60px;
 }
 
 .pillar-card {
-  padding: 40px 32px;
+  padding: 48px 40px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+.pillar-card:hover {
+  border-color: var(--primary-blue);
+  box-shadow: 0 12px 48px rgba(0, 71, 255, 0.08);
+  transform: translateY(-8px);
+}
+
+.pillar-icon-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background: rgba(0, 71, 255, 0.06);
+  color: var(--primary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  transition: all 0.3s ease;
+}
+
+.pillar-card:hover .pillar-icon-wrap {
+  background: var(--primary-blue);
+  color: #FFFFFF;
+  transform: scale(1.1);
 }
 
 .pillar-card h3 {
-  font-size: 1.2rem;
-  color: #fff;
-  margin-bottom: 12px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.pillar-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* ─── Partners Section ─── */
+.about-partners {
+  padding: 80px 0 120px;
+  background: var(--bg-obsidian);
+  text-align: center;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-top: 50px;
+  opacity: 0.7;
+}
+
+.partner-item {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+  transition: all 0.3s ease;
+}
+
+.partner-item:hover {
+  opacity: 1;
+  transform: scale(1.05);
+  border-color: var(--primary-blue);
+}
+
+/* ─── Global Animation ─── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1100px) {
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .about-hero h1 {
+    font-size: 3.2rem;
+  }
 }
 
 @media (max-width: 900px) {
   .trust-pillars {
     grid-template-columns: 1fr;
   }
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
+  .about-hero h1 {
+    font-size: 2.5rem;
+  }
   .stats-grid {
     grid-template-columns: 1fr;
   }
